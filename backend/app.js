@@ -40,6 +40,7 @@ var selaa_tilitapahtumiaRouter = require('./routes/selaa_tilitapahtumia');
 var hae_saldoRouter = require('./routes/hae_saldo');
 var sulje_korttiRouter = require('./routes/sulje_kortti');
 var registerRouter = require('./routes/register');
+var profileRouter = require('./routes/profile');
 
 var app = express();
 app.use(cors(corsOptions));
@@ -50,8 +51,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/profile', profileRouter);
 app.use('/login', loginRouter);
-app.use('/sulje_kortti', sulje_korttiRouter);
 app.use('/register', registerRouter);
 app.use(authenticateToken);
 app.use('/asiakas', asiakasRouter);
@@ -59,8 +60,7 @@ app.use('/tili', tiliRouter);
 app.use('/tilitapahtumat', tilitapahtumatRouter);
 app.use('/selaa_tilitapahtumia', selaa_tilitapahtumiaRouter);
 app.use('/hae_saldo', hae_saldoRouter);
-app.use('/kortti', korttiRouter);
-app.use('/oikeudet', oikeudetRouter);
+
 
 
 

@@ -1,5 +1,6 @@
 {
     "register": "http://localhost:8000/register",
-    "login":"http://localhost:8000/login"
+    "login":"http://localhost:8000/login",
+    "profile":"http://localhost:8000/profile"
 }
 
