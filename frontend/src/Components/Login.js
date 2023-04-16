@@ -3,8 +3,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { login } from './services/authService.js';
 import welcome from '../assets/images/welcome.webp';
+import { UserContext } from './context/userContext.js';
 
 export default function Login () {
+
+  const { setLogged } = useContext(UserContext);
 
   const callingTheServer = async () => {
  
@@ -14,12 +17,14 @@ export default function Login () {
     if(data.data === "user does not exists") return toast.info(("User does not exists"), {position: toast.POSITION.BOTTOM_CENTER}); 
     if(data.data === -4078) return toast.info(("Something went wrong, please try again later!"), {position: toast.POSITION.BOTTOM_CENTER}); 
     localStorage.setItem('token', data.data);
+    setLogged(true);
     setAuthSuccess(true);
   };
 
 const [authSuccess, setAuthSuccess] = useState(false);
 const [username, setUserName] = useState("");
 const [password, setPassword] = useState("");
+
 
 const usernameRef = useRef();
 

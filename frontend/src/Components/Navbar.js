@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from './context/userContext.js';
 
 export default function Navbar({setPathName, pathName}) {
 
-const isLoggedIn = true;
+  const { logged } = useContext(UserContext);
 
 return (
     
@@ -19,7 +20,7 @@ return (
 </ul>
     <ul>
   <li><Link onClick={() => setPathName("/")} className={`${pathName === "/" ? "active" : "navlink"}`} to="/">Home</Link></li>
-  {isLoggedIn ? ( <React.Fragment>
+{!logged ? ( <React.Fragment>
   <li><Link onClick={() => setPathName("/Login")} className={`${pathName === "/Login" ? "active" : "navlink"}`}  to="/Login">Login</Link></li>
   <li><Link onClick={() => setPathName("/Register")} className={`${pathName === "/Register" ? "active" : "navlink"}`} to="/Register">Register</Link></li>
   </React.Fragment>
