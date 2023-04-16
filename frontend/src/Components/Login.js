@@ -4,10 +4,12 @@ import { toast } from 'react-toastify';
 import { login } from './services/authService.js';
 import welcome from '../assets/images/welcome.webp';
 import { UserContext } from './context/userContext.js';
+import { UserInfoContext } from './context/userInfoContext.js';
 
 export default function Login () {
 
   const { setLogged } = useContext(UserContext);
+  const { setUser } = useContext(UserInfoContext);
 
   const callingTheServer = async () => {
  
@@ -18,6 +20,7 @@ export default function Login () {
     if(data.data === -4078) return toast.info(("Something went wrong, please try again later!"), {position: toast.POSITION.BOTTOM_CENTER}); 
     localStorage.setItem('token', data.data);
     setLogged(true);
+    setUser(username);
     setAuthSuccess(true);
   };
 

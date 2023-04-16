@@ -1,14 +1,16 @@
 import { useContext } from 'react'
 import { UserContext } from './context/userContext.js';
-// import { useNavigate } from 'react-router-dom'
+import { UserInfoContext } from './context/userInfoContext.js';
+
 
 export const Logout = () => {
-    // const navigation = useNavigate();
+  
     const { setLogged } = useContext(UserContext);
+    const { setUser} = useContext(UserInfoContext);
 
         localStorage.removeItem('token');
         setLogged(false);
-        // navigation("/");
+        setUser("");
         window.location = '/';
 
   return (

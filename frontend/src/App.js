@@ -12,12 +12,15 @@ import V2 from './Components/visualizationViews/V2.js';
 import { Routes, Route, useLocation} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { UserContext } from './Components/context/userContext';
+import { UserInfoContext } from './Components/context/userInfoContext';
 import { Logout } from './Components/Logout';
+import Errorpage from './Components/Errorpage';
 
 function App() {
 
 const [pathName, setPathName] = useState(useLocation().pathname);
 const [logged, setLogged] = useState(false);
+const [user, setUser] = useState("");
 
 useEffect( () => {
   if (localStorage.hasOwnProperty('token')) {
@@ -30,6 +33,7 @@ useEffect( () => {
 }, [logged])
 
   const userLogged = useMemo(() => ({ logged, setLogged }), [logged, setLogged]);
+  const userInfo = useMemo(() => ({ user, setUser }), [user, setUser]);
 
   return (
    <div className="container">
@@ -42,10 +46,11 @@ useEffect( () => {
               <Route path="/" exact element={<Homepage setPathName={setPathName} />} />
               <Route path="/v1" element={<V1 />} />
               <Route path="/v2" element={<V2 />} />
-              <Route path="/Login" element={<UserContext.Provider value={userLogged}><Login /></UserContext.Provider>} />
-              <Route path="/Logout" element={<UserContext.Provider value={userLogged}><Logout /></UserContext.Provider>} />
+              <Route path="/Login" element={<UserInfoContext.Provider value={userInfo}><UserContext.Provider value={userLogged}><Login /></UserContext.Provider></UserInfoContext.Provider>} />
+              <Route path="/Logout" element={<UserInfoContext.Provider value={userInfo}><UserContext.Provider value={userLogged}><Logout /></UserContext.Provider></UserInfoContext.Provider>} />
               <Route path="/Profile" element={<Profile />} />
               <Route path="/Register" element={<Register setPathName={setPathName} pathName={pathName}/>}/>
+              <Route path="*" element={<Errorpage/>}/>
           </Routes>
        </header>
        <Footer />
