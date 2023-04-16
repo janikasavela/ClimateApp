@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(191, 201, 205);
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  color: rgb (44, 44, 44);
+}
+
+h1 {   
+  text-shadow: 1px 1px 2px black;
+  color: white;
+}
+
+.container {
+  background-color: white;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0 64px 64px 64px;
+}
+
+

@@ -1,0 +1,5 @@
+{
+    "register": "http://localhost:8000/register",
+    "login":"http://localhost:8000/login"
+}
+

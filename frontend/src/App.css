@@ -1,0 +1,261 @@
+
+.tabs {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 16px;
+
+}
+
+.tabs label {
+  padding-right: 7px;
+}
+
+.tabs li {
+  display: inline-block;
+  margin-right: 70px;
+}
+
+.tabs .navlink {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(44, 44, 44);
+ 
+}
+
+.navlink:hover {
+  color:rebeccapurple;
+}
+
+.picture {
+  width: 60%;
+  margin: auto;
+}
+
+.picture img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+h2 {
+  margin: auto;
+  width: 49%;
+  padding-top: 20px;
+  border-bottom: 2px solid rgba(119, 136, 153, 0.501);
+  padding-bottom: 6px;
+  padding-left: 20px;
+}
+
+#about {
+  box-shadow: none;
+  padding: 0;
+  margin-top: 0px;
+ }
+ 
+
+.about {
+  line-height: 32px;
+  margin: 0px 0 20px 0;
+}
+
+
+.card-wrapper {
+  display: flex;
+  border-radius: 10px;
+  margin: 16px;
+  margin-top: 35px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  margin: 16px;
+  box-shadow: 0px 3px 11px 1px rgba(0, 0, 0, 0.1);
+  padding: 16px 32px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(44, 44, 44);
+  position: relative;
+}
+
+@media only screen and (max-widht: 750px) {
+  .card {
+      width: 100%;
+  }
+
+} 
+
+@media only screen and (max-widht: 600px) {
+  body {
+      padding: 16px;
+  }
+  .container {
+      padding: 0 16px;
+  }
+
+} 
+
+.card img {
+  height: 50%;
+  width: 80%;
+}
+
+.card a {
+  border: none;
+  color: white;
+  background-color: skyblue;
+  padding: 10px;
+  border-radius: 10%;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 15px;
+}
+
+.card .title {
+color: white;
+background-color: #4682B4;
+width: 100%;
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+position: absolute;
+top: -48px;
+width: 100%;
+left: 0;
+text-transform: uppercase;
+}
+
+.register form {
+  width: 400px;
+  text-align: center;
+  padding: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register label {
+  font-size: 20px;
+  color: #666;
+  margin: 10px;
+  display: block;
+  margin-top: 25px;
+}
+.register input {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.register button {
+  width: 100px;
+  background: #4682B4;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px 50px 10px;
+}
+
+.register button:hover {
+  transform: scale(1.05);
+}
+
+.container2  {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+.chart {
+  height: 60vh;
+  width: 100%;
+  border: 2px solid lightgray;
+}
+
+.chart-info {
+  border: 1px solid #4682B4;
+  padding: 30px;
+  width: 50vw;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+footer {
+  padding-top: 35px;
+}
+
+ul li ul.dropdown li {
+  display: block;
+}
+
+ul li ul.dropdown {
+  width: 5%;
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  z-index: 999;
+  display: none;
+}
+
+.link-style {
+  text-decoration: none;
+  color: burlywood;
+}
+
+.link-style:hover {
+  color: rebeccapurple;
+}
+
+.downdrop {
+  padding: 10px;
+  margin: 0px;
+  color: burlywood;
+}
+
+.downdrop:hover {
+  cursor: pointer;
+}
+
+ul li:hover ul.dropdown {
+  display: block;
+}
+
+.tabs .active { 
+ padding: 10px 15px 0px 15px;
+ text-decoration: none;
+ font-size: 20px;
+ color: rgb(74, 100, 188);
+} 
+
+#register-link {
+  text-decoration: none;
+  color:darkcyan;
+  font-weight: bold;
+}
+
+.picturee {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.picturee img {
+  width: 200%;
+  border-radius: 70%;
+  margin-bottom: 70px;
+}
