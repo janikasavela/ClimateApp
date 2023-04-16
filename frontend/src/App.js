@@ -12,6 +12,7 @@ import V2 from './Components/visualizationViews/V2.js';
 import { Routes, Route, useLocation} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { UserContext } from './Components/context/userContext';
+import { Logout } from './Components/Logout';
 
 function App() {
 
@@ -42,6 +43,7 @@ useEffect( () => {
               <Route path="/v1" element={<V1 />} />
               <Route path="/v2" element={<V2 />} />
               <Route path="/Login" element={<UserContext.Provider value={userLogged}><Login /></UserContext.Provider>} />
+              <Route path="/Logout" element={<UserContext.Provider value={userLogged}><Logout /></UserContext.Provider>} />
               <Route path="/Profile" element={<Profile />} />
               <Route path="/Register" element={<Register setPathName={setPathName} pathName={pathName}/>}/>
           </Routes>

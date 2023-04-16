@@ -27,7 +27,7 @@ return (
   ) :  
     ( <React.Fragment>
   <li><Link onClick={() => setPathName("/Profile")} className={`${pathName === "/Profile" ? "active" : "navlink"}`}  to="/Profile">Profile</Link></li>
-  {/* <li><Link onClick={() => {setPathName("/");}} className="navlink" to="/Logout">Log Out</Link></li> */}
+  <li><Link onClick={() => {setPathName("/");}} className="navlink" to="/Logout">Log Out</Link></li>
   </React.Fragment>
   )}  
   </ul>
