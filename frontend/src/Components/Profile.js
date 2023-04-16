@@ -1,13 +1,57 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import { UserContext } from './context/userContext';
+import http from './services/httpService';
+import { UserInfoContext } from './context/userInfoContext.js';
+import config from './services/config.json'
+
 
 export default function Profile() {
 
+const { setUser } = useContext(UserInfoContext);
+const { user } = useContext(UserInfoContext);
+const { setLogged } = useContext(UserContext);
+let [confirm, setConfirm] = useState(false);
+
+console.log(config.profile + user);
+
+
+const deleteProfile = async (e) => {
+    e.preventDefault()
+
+  const data = await http.delete(config.profile + user);
+  console.log(data);
+
+  if (data.status === 200 ) {
+    setUser("");
+    setLogged(false);
+    localStorage.removeItem('token');
+    window.location = '/';
+  }
+
+  return toast.info("Something went wrong, please try again later!", {position: toast.POSITION.BOTTOM_CENTER});
+
+}
+
+
     return (
-        <div className="chart">
+        <div className="container2">
+        {confirm ? ( <React.Fragment>
+            <form onSubmit={deleteProfile}>
+                    <h3>Confirm user deletion</h3>
+                    <p>If you delete a user, you will also lose all the views you created!</p>
+                    <button type="submit" className="deleteButton">Delete</button>
+                    <button onClick={() => setConfirm(false)}className="deleteButton">Cancel</button>
+                </form>
+        </React.Fragment>
+        ) : (
+            <React.Fragment>
             <p>Users profile page where will be views user have created listed, open / delete buttons for them
         and delete account button</p>
-        <button onClic={null} className="deleteButton">Delete user</button>
-        </div>
-    );
+        <button onClick={() => setConfirm(true)} className="deleteButton">Delete user</button> </React.Fragment> 
+        )}
+    </div>
+  );
 
 };

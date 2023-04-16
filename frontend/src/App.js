@@ -48,7 +48,7 @@ useEffect( () => {
               <Route path="/v2" element={<V2 />} />
               <Route path="/Login" element={<UserInfoContext.Provider value={userInfo}><UserContext.Provider value={userLogged}><Login /></UserContext.Provider></UserInfoContext.Provider>} />
               <Route path="/Logout" element={<UserInfoContext.Provider value={userInfo}><UserContext.Provider value={userLogged}><Logout /></UserContext.Provider></UserInfoContext.Provider>} />
-              <Route path="/Profile" element={<Profile />} />
+              <Route path="/Profile" element={<UserInfoContext.Provider value={userInfo}><UserContext.Provider value={userLogged}><Profile /></UserContext.Provider></UserInfoContext.Provider>} />
               <Route path="/Register" element={<Register setPathName={setPathName} pathName={pathName}/>}/>
               <Route path="*" element={<Errorpage/>}/>
           </Routes>
