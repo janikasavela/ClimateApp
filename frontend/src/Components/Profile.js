@@ -2,9 +2,8 @@ import React, { useState, useContext } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { UserContext } from './context/userContext';
-import http from './services/httpService';
 import { UserInfoContext } from './context/userInfoContext.js';
-import config from './services/config.json'
+import { deleteUser } from './services/authService.js';
 
 
 export default function Profile() {
@@ -14,14 +13,11 @@ const { user } = useContext(UserInfoContext);
 const { setLogged } = useContext(UserContext);
 let [confirm, setConfirm] = useState(false);
 
-console.log(config.profile + user);
-
 
 const deleteProfile = async (e) => {
     e.preventDefault()
 
-  const data = await http.delete(config.profile + user);
-  console.log(data);
+  const data = await deleteUser(user);
 
   if (data.status === 200 ) {
     setUser("");

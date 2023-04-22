@@ -187,13 +187,24 @@ text-transform: uppercase;
 }
 
 .chart-info {
-  border: 1px solid #4682B4;
   padding: 30px;
-  width: 50vw;
+  width: 70vw;
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
+
+.chart-infoo {
+  padding: 0;
+  width: 70vw;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  border:rgb(74, 100, 188) solid 1px;
+  border-radius: 3%;
+}
+
 
 footer {
   padding-top: 35px;
@@ -266,3 +277,15 @@ background-color: linen;
 padding: 5px;
 border-radius: 5%;
 }
+
+.show{
+  font-size: small;
+}
+
+.datalink {
+  text-decoration: none;
+  color:#4682B4;
+}
+
+
+

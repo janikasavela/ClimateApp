@@ -3,7 +3,7 @@ import {checkUsersInput} from './controlFunctions/controlInputs.js';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
-import { register } from './services/userService.js';
+import { register } from './services/authService.js';
 
 
 export default function Register({setPathName, pathName}) {

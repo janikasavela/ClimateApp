@@ -35,12 +35,12 @@ var asiakasRouter = require('./routes/asiakas');
 var tiliRouter = require('./routes/tili');
 var oikeudetRouter = require('./routes/oikeudet');
 var loginRouter = require('./routes/login');
-var tilitapahtumatRouter = require('./routes/tilitapahtumat');
 var selaa_tilitapahtumiaRouter = require('./routes/selaa_tilitapahtumia');
 var hae_saldoRouter = require('./routes/hae_saldo');
 var sulje_korttiRouter = require('./routes/sulje_kortti');
 var registerRouter = require('./routes/register');
 var profileRouter = require('./routes/profile');
+var chartRouter = require('./routes/chart');
 
 var app = express();
 app.use(cors(corsOptions));
@@ -51,14 +51,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/profile', profileRouter);
+
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
+app.use('/profile', profileRouter);
+app.use('/chart', chartRouter);
 app.use(authenticateToken);
 app.use('/asiakas', asiakasRouter);
 app.use('/tili', tiliRouter);
-app.use('/tilitapahtumat', tilitapahtumatRouter);
-app.use('/selaa_tilitapahtumia', selaa_tilitapahtumiaRouter);
 app.use('/hae_saldo', hae_saldoRouter);
 
 
