@@ -113,6 +113,11 @@ return (
     </div>
     <Line data={data} options={options} />
     </div>
+    <div className="chart-infoo">
+        <p>Stacked line graph of country-specific co2 emissions over time. Values in million tonnes of CO2 per year. From the graph, the user can select the countries whose data is displayed.</p>
+        <p><a className="datalink" href="https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021">Description</a></p>
+        <p><a className="datalink" href="https://data.icos-cp.eu/licence_accept?ids=%5B%22lApekzcmd4DRC34oGXQqOxbJ%22%5D">Data Source</a></p>
+        </div>
   </React.Fragment>
 );
 

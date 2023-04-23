@@ -152,7 +152,9 @@ export default function Visualization2() {
         <div className="chart-infoo">
         <p>Atmospheric CO2 concentrations from Mauna Loa measurements starting 1958.</p>
         <p>Antarctic Ice Core records of atmospheric CO2 ratios combined with Mauna Loa measurements.</p>
-        <p>Sources:  <a href="https://gml.noaa.gov/ccgg/trends/data.html" className="datalink">Mauna Loa measurements</a> and  <a href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/lawdome.combined.dat" className="datalink">Antarctic Ice Core records</a>
+        <p><a href="https://gml.noaa.gov/ccgg/trends/data.html" className="datalink">Mauna Loa measurements Data Source</a> and  <a href="https://gml.noaa.gov/ccgg/about/co2_measurements.html" className="datalink">Description</a>
+        </p>
+        <p><a href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/lawdome.combined.dat" className="datalink">Antarctic Ice Core records Data Source</a> and  <a href="https://cdiac.ess-dive.lbl.gov/trends/co2/lawdome.html" className="datalink">Description</a>
         </p>
         </div>
         </React.Fragment>

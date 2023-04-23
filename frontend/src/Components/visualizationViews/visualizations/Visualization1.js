@@ -109,7 +109,7 @@ export default function Visualization1() {
 
         <div className="chart-infoo">
         <p>In the diagram above, annual temperature deviations from the period 1850-2022.</p>
-        <p>Source: <a className="datalink" href="https://www.metoffice.gov.uk/hadobs/hadcrut5/">hadCRUT5 data</a></p>
+        <p><a className="datalink" href="https://www.metoffice.gov.uk/hadobs/hadcrut5/">Description and dataset</a></p>
         </div>
         </React.Fragment>
     );
