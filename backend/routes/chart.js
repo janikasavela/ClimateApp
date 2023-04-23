@@ -90,6 +90,27 @@ router.get('/v1Annual',
         })
     });
 
+    router.get('/v3carbon',
+    function (request, response) {
+        chart.getV3carbon(function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
+
+    router.get('/v3global',
+    function (request, response) {
+        chart.getV3global(function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
 
 
 

@@ -24,7 +24,14 @@ const chart = {
   },
   getV2ice3: function(callback) {
     return db.query('select * from v2ice_core3', callback);
+  },
+  getV3carbon: function(callback) {
+    return db.query('select * from v3carbon_dataa', callback);
+  },
+  getV3global: function(callback) {
+    return db.query('select * from v3global_data', callback);
   }
+
 
 };
 module.exports = chart;

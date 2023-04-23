@@ -10,6 +10,7 @@ import { Chart as ChartJS,
 import { Line } from 'react-chartjs-2';
 import { getChart } from '../../services/authService';
 
+
 ChartJS.register(
     LineElement,
     CategoryScale,
@@ -21,15 +22,15 @@ ChartJS.register(
 
 export default function Visualization3() {
 
-    const [annual, setAnnual] = useState([]);
-    const [monthly, setMonthly] = useState([]);
-    const [showAnnual, setShowAnnual] = useState(true);
-    const [reconstruction, setReconstruction] = useState([]);
+    const [global, setGlobal] = useState([]);
+    const [carbon, setCarbon] = useState([]);
+
 
     const callingTheServer = async () => {
-        setAnnual((await getChart("v1Annual")).data);
-        setMonthly((await getChart("v1Monthly")).data);
-        setReconstruction((await getChart("R")).data);
+        setGlobal((await getChart("v3global")).data);
+        setCarbon((await getChart("v3carbon")).data);
+        console.log(carbon);
+        console.log(global);
     };
 
     useEffect(() => {
@@ -37,102 +38,80 @@ export default function Visualization3() {
     }, [])
 
     const data = {
-        datasets: [
-            {
-                label: "Global anomalies",
-                data: showAnnual ? annual : monthly,
-                borderColor: "#cd5c5c",
-                backgroundColor: "#cd5c5c",
-                borderWidth: 1,
-                parsing: {
-                  xAxisKey: "year",
-                  yAxisKey: "global_anomaly",
-                },
-                pointRadius: 1,
-              },
-          {
-            label: "North anomalies",
-            data: showAnnual ? annual : monthly,
-            borderColor: "#4169e1",
-            backgroundColor: "#4169e1",
-            borderWidth: 1,
-            parsing: {
-              xAxisKey: "year",
-              yAxisKey: "northern_anomaly",
-            },
-            pointRadius: 1,
-          },
-          {
-            label: "South anomalies",
-            data: showAnnual ? annual : monthly,
-            borderColor: "#663399",
-            backgroundColor: "#663399",
-            borderWidth: 1,
-            parsing: {
-              xAxisKey: "year",
-              yAxisKey: "southern_anomaly",
-            },
-            pointRadius: 1,
-          },
-          // {
-          //   label: "Reconstruction",
-          //   data: reconstruction,
-          //   hidden: true,
-          //   borderColor: "#7fffd4",
-          //   backgroundColor: "#7fffd4",
-          //   parsing: {
-          //     xAxisKey: "year",
-          //     yAxisKey: "T",
-          //   },
-          //   pointRadius: 1,
-          // }
-
-        ]
-      }
-    
-      const options =
-      {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: "bottom",
-          },
-          title: {
-            display: true,
-            text: "Temperature anomalies " + (showAnnual ? "annually" : "monthly"),
-            font: {
-              size: 20
-            }
-          },
-        } ,     
-        // scales: {
-        //   x: {
-        //     type: "linear",
-        //     // max: 2022,
-        //   },
-        //   y: {
-        //     type: "linear",
-        //   },
+      // labels: global.map((data) => data.years_ago),
+      datasets: [
+        {
+          label: "Global data",
+          data: global.map((item) => ({ x: item.years_ago, y: item.temperature})),
+          borderColor: "rgb(50, 80, 200)",
+          backgroundColor: "rgb(50, 80, 200)",
+          borderWidth: 1,
+          pointRadius: 0,
+        },
+        {
+          label: "Carbon data",
+          data: carbon.map((item) => ({ x: item.years_ago, y: item.co2})),
+          borderColor: "rgb(200, 80, 50)",
+          backgroundColor: "rgb(200, 80, 50)",
+          borderWidth: 1,
+          pointRadius: 0,
+          yAxisID: 'y1',
           
-        // },
-    
-      }
-    
+        }
+      ]
+  }
+  
+  const options = {
+    responsive: true,
+    scales: {
+      x: {
+        type: "linear",
+        title: {
+          display: true,
+          text: '(Thousands of) Years Ago',
+        },
+      },
+      y: {
+        type: 'linear',
+        max: 4,
+        min: -8,
+        title: {
+          display: true,
+          text: 'Temperature Change (°C)',
+        },
+      },
+      y1: {
+        type: 'linear',
+        position: 'right',
+        max: 500,
+        min: 0,
+        title: {
+          display: true,
+          text: 'CO2 ppm',
+        },
+      },
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: 'Global Temperature Change vs CO2 ppm',
+      },
+      legend: {
+        position: 'bottom',
+      },
+    },
+  };
+  
+
+
     return (
         <React.Fragment>
         <div className='chart-info'>
            <Line data={data} options={options}/>
-            <div>
-           <input type="radio" name="select" onChange={(e) => setShowAnnual(true)} id="true" />
-           <label className="show"htmlFor="true">Show Annually</label></div>
-
-           <input type="radio" name="select" onChange={(e) => setShowAnnual(false)} id="false"/>
-           <label className="show" htmlFor="false">Show Monthly</label>
         </div>
 
         <div className="chart-infoo">
-        <p>In the diagram above, annual temperature deviations from the period 1850-2022.</p>
-        <p>Source: <a className="datalink" href="https://www.metoffice.gov.uk/hadobs/hadcrut5/">hadCRUT5 data</a></p>
+   
         </div>
         </React.Fragment>
     );
