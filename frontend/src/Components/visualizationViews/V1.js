@@ -1,6 +1,7 @@
 import React from 'react';
 import Visualization1 from './visualizations/Visualization1';
 import Visualization2 from './visualizations/Visualization2';
+import Visualization3 from './visualizations/Visualization3';
 
 export default function V1() {
 
@@ -8,10 +9,7 @@ export default function V1() {
         <React.Fragment>
         <Visualization1 />
         <Visualization2 />
-
-      <div className="chart-info">
-          <p>Description, info and links about visualization here!</p>
-        </div>
+        <Visualization3 />
         </React.Fragment>
     );
 

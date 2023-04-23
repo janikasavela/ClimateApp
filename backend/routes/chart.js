@@ -48,7 +48,7 @@ router.get('/v1Annual',
 
     router.get('/v2monthly',
     function (request, response) {
-        chart.getV2annual(function (err, dbResult) {
+        chart.getV2monthly(function (err, dbResult) {
             if (err) {
                 response.json(err);
             } else {

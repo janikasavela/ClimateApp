@@ -19,15 +19,17 @@ ChartJS.register(
     Legend
 );
 
-export default function Visualization1() {
+export default function Visualization3() {
 
     const [annual, setAnnual] = useState([]);
     const [monthly, setMonthly] = useState([]);
     const [showAnnual, setShowAnnual] = useState(true);
+    const [reconstruction, setReconstruction] = useState([]);
 
     const callingTheServer = async () => {
         setAnnual((await getChart("v1Annual")).data);
         setMonthly((await getChart("v1Monthly")).data);
+        setReconstruction((await getChart("R")).data);
     };
 
     useEffect(() => {
@@ -71,7 +73,19 @@ export default function Visualization1() {
               yAxisKey: "southern_anomaly",
             },
             pointRadius: 1,
-          }
+          },
+          // {
+          //   label: "Reconstruction",
+          //   data: reconstruction,
+          //   hidden: true,
+          //   borderColor: "#7fffd4",
+          //   backgroundColor: "#7fffd4",
+          //   parsing: {
+          //     xAxisKey: "year",
+          //     yAxisKey: "T",
+          //   },
+          //   pointRadius: 1,
+          // }
 
         ]
       }
@@ -90,7 +104,17 @@ export default function Visualization1() {
               size: 20
             }
           },
-        }
+        } ,     
+        // scales: {
+        //   x: {
+        //     type: "linear",
+        //     // max: 2022,
+        //   },
+        //   y: {
+        //     type: "linear",
+        //   },
+          
+        // },
     
       }
     

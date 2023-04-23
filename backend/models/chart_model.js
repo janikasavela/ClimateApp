@@ -14,7 +14,7 @@ const chart = {
     return db.query('select * from v2atmospheric_annual;', callback);
   },
   getV2monthly: function(callback) {
-    return db.query('select * from v2atmospheric_monthly;', callback);
+    return db.query('select * from v2atmospheric_monthly; ', callback);
   },
   getV2ice1: function(callback) {
     return db.query('select * from v2ice_core1;', callback);
