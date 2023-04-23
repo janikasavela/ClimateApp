@@ -116,6 +116,7 @@ export default function Visualization2() {
   
     const options =
     {
+      maintainAspectRatio: false,
       responsive: true,
       plugins: {
         legend: {
@@ -144,7 +145,7 @@ export default function Visualization2() {
     
     return (
         <React.Fragment>
-        <div className='chart-info'>
+        <div className='chart-info2'>
            <Line data={data} options={options}/>
         </div>
 

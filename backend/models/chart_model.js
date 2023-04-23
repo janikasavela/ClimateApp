@@ -30,7 +30,11 @@ const chart = {
   },
   getV3global: function(callback) {
     return db.query('select * from v3global_data', callback);
+  },
+  getV3events: function(callback) {
+    return db.query('select * from v3human_events;', callback);
   }
+
 
 
 };

@@ -112,6 +112,16 @@ router.get('/v1Annual',
         })
     });
 
+    router.get('/v3events',
+    function (request, response) {
+        chart.getV3events(function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
 
 
 module.exports = router;

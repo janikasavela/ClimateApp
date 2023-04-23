@@ -287,5 +287,13 @@ border-radius: 5%;
   color:#4682B4;
 }
 
+.chart-info2 {
+  padding: 30px;
+  width: 70vw;
+  height: 35vw;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
 
 
