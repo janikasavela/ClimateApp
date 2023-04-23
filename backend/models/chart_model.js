@@ -33,9 +33,10 @@ const chart = {
   },
   getV3events: function(callback) {
     return db.query('select * from v3human_events;', callback);
+  },
+  getV4: function(callback) {
+    return db.query('select * from v4emissions;', callback);
   }
-
-
 
 };
 module.exports = chart;

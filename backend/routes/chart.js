@@ -123,5 +123,16 @@ router.get('/v1Annual',
         })
     });
 
+    
+    router.get('/v4',
+    function (request, response) {
+        chart.getV4(function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
 
 module.exports = router;

@@ -143,8 +143,10 @@ const options = {
         </div>
 
         <div className="chart-infoo">
-         <p> Multi-axis line graph of temperature and carbon dioxide concentrations of changes over 2 million years.</p>
-         <p>Human evolution and activities 8 events.</p>
+         <p>Multi-axis line graph of temperature and carbon dioxide concentrations of changes over 2 million years.
+         The years in the graph mean thousands of years, for example 900 = 900,000 years ago.
+         </p>
+         <p>8 events of human evolution and activities.</p>
          <p>Sources:  <a href="http://carolynsnyder.com/publications.php" className="datalink">Evolution of global temperature</a> and  <a href="https://www.southampton.ac.uk/~cpd/history.html" className="datalink">Human Evolution and Activities</a>
         </p>
         </div>

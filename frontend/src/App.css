@@ -296,4 +296,21 @@ border-radius: 5%;
   margin-bottom: 0;
 }
 
+.label {
+  text-align: center;
+  color:rgba(100, 100, 111);
+  font-size: 20px;
+}
+
+.chart-info22 {
+  padding: 30px;
+  width: 70vw;
+  height: 35vw;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+
+
 
