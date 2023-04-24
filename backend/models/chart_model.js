@@ -36,6 +36,15 @@ const chart = {
   },
   getV4: function(callback) {
     return db.query('select * from v4emissions;', callback);
+  },
+  getV5sector: function(callback) {
+    return db.query('select * from v5sector;', callback);
+  },
+  getV5subsector: function(callback) {
+    return db.query('select * from v5subsector;', callback);
+  },
+  getV5subsectorF: function(callback) {
+    return db.query('select * from v5subsector_further;', callback);
   }
 
 };

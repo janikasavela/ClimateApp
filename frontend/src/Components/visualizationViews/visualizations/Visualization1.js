@@ -40,8 +40,8 @@ export default function Visualization1() {
             {
                 label: "Global anomalies",
                 data: showAnnual ? annual : monthly,
-                borderColor: "#cd5c5c",
-                backgroundColor: "#cd5c5c",
+                borderColor: "#dc143c",
+                backgroundColor: "#dc143c",
                 borderWidth: 1,
                 parsing: {
                   xAxisKey: "year",

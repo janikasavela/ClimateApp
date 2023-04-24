@@ -135,4 +135,37 @@ router.get('/v1Annual',
         })
     });
 
+    router.get('/v5sector',
+    function (request, response) {
+        chart.getV5sector(function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
+
+    router.get('/v5subsector',
+    function (request, response) {
+        chart.getV5subsector(function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
+
+    router.get('/v5subsectorF',
+    function (request, response) {
+        chart.getV5subsectorF(function (err, dbResult) {
+            if (err) {
+                response.json(err);
+            } else {
+                response.json(dbResult);
+            }
+        })
+    });
+
 module.exports = router;

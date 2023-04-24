@@ -46,8 +46,8 @@ export default function Visualization2() {
         {
           label: "CO2 Annual",
           data: annual,
-          borderColor: "#663399",
-          backgroundColor: "#663399",
+          borderColor: "#dc143c",
+          backgroundColor: "#dc143c",
           borderWidth: 1,
           parsing: {
             xAxisKey: "year",
