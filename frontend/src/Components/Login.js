@@ -53,6 +53,7 @@ return (
         <h4>
         Welcome {`${username}`}!
         </h4>
+        <p>On the profile tab you can create your own views and open or delete already created ones.</p>
          <div className="picturee">
         <img src={welcome} alt="mountains" />
       </div>
