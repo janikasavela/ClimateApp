@@ -325,4 +325,47 @@ border-radius: 5%;
   margin: 5px;
 }
 
+.createForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.createForm label {
+  display: block;
+  margin: 6px;
+}
+
+.createForm input[type="text"],
+select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.createForm input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.createForm button[type="submit"] {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  background-color:cadetblue;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.createForm button[type="submit"]:hover {
+  background-color: rosybrown;
+}
+
+
 

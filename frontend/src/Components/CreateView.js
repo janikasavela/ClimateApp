@@ -47,7 +47,7 @@ export default function VisualizationForm (username) {
     setDescriptions({});
   };
 
-  const visualizationLabels = [    { value: 'v1', label: 'Visualization 1' },    { value: 'v2', label: 'Visualization 2' },    { value: 'v3', label: 'Visualization 3' },    { value: 'v4', label: 'Visualization 4' },    { value: 'v5', label: 'Visualization 5' },  ];
+  const visualizationLabels = [    { value: 'v1', label: 'Temperature anomalies' },    { value: 'v2', label: 'Atmospheric CO2' },    { value: 'v3', label: 'Global temperature' },    { value: 'v4', label: 'CO2 emissions by country' },    { value: 'v5', label: 'CO2 emissions by sectors' },  ];
 
   const handleVisualizationChange = (value, isChecked) => {
     setVisualizations(prevState => {
@@ -66,9 +66,9 @@ export default function VisualizationForm (username) {
     }));
   };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="url">URL:</label>
+  return ( 
+    <form onSubmit={handleSubmit} className='createForm'>
+      <label htmlFor="url">Desired URL:</label>
       <input type="text" id="url" value={url} onChange={(e) => setUrl(e.target.value)} required/>
   
       <label htmlFor="columnLayout">Column layout:</label>
@@ -110,5 +110,6 @@ export default function VisualizationForm (username) {
   
       <button type="submit">Submit</button>
     </form>
+
   );
           };  
