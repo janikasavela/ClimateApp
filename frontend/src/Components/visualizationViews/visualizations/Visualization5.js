@@ -5,14 +5,15 @@ import { getChart } from '../../services/authService';
 export default function Visualization5() {
   const [sector, setSector] = useState([]);
   const [subsector, setSubsector] = useState([]);
+  const [subsectorF, setSubsectorF] = useState([]);
   const [activeData, setActiveData] = useState([]);
   
   const callingTheServer = async () => {
   
     setSector((await getChart("v5sector")).data);
     setSubsector((await getChart("v5subsector")).data);
+    setSubsectorF((await getChart("v5subsectorF")).data);
     setActiveData((await getChart("v5sector")).data);
-
   };
      
   useEffect(() => {
@@ -21,6 +22,14 @@ export default function Visualization5() {
 
 const handleDataClick = () => {
   setActiveData(subsector);
+};
+
+const handleDataClick2 = () => {
+  setActiveData(subsectorF);
+};
+
+const handleDataClick3 = () => {
+  setActiveData(sector);
 };
 
 const data = {
@@ -51,7 +60,9 @@ const options = {
     <React.Fragment>
       <div className='chart-info2'>
       <Pie data={data} options={options} />
+      <button onClick={handleDataClick3}>Switch to Sector Data</button>
       <button onClick={handleDataClick}>Switch to Subsector Data</button>
+      <button onClick={handleDataClick2}>Switch to SubsectorF Data</button>
       </div>
       
     <div className="chart-infoo">
