@@ -15,6 +15,17 @@ export default function Visualization5() {
     setSubsectorF((await getChart("v5subsectorF")).data);
     setActiveData((await getChart("v5sector")).data);
   };
+
+  const generateRandomColors = (num) => {
+    let colors = [];
+    for (let i = 0; i < num; i++) {
+      let r = Math.floor(Math.random() * 255);
+      let g = Math.floor(Math.random() * 255);
+      let b = Math.floor(Math.random() * 255);
+      colors.push(`rgb(${r},${g},${b})`);
+    }
+    return colors;
+  };
      
   useEffect(() => {
     callingTheServer();
@@ -38,8 +49,8 @@ const data = {
     {
       label: "GHG Emissions by Sector",
       data: activeData.map(d => d.share_of),
-      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
-      hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"]
+      backgroundColor: generateRandomColors(activeData.length),
+      hoverBackgroundColor: generateRandomColors(activeData.length)
     }
   ]
 };
@@ -47,6 +58,15 @@ const data = {
 const options = {
   responsive: true,
   maintainAspectRatio: false,
+  plugins: {
+    title: {
+      display: true,
+      text: "CO2 emissions by sectors",
+      font: {
+        size: 20
+      }
+    },
+  },
   title: {
     display: true,
     text: "GHG Emissions by Sector"
@@ -60,15 +80,17 @@ const options = {
     <React.Fragment>
       <div className='chart-info2'>
       <Pie data={data} options={options} />
-      <button onClick={handleDataClick3}>Switch to Sector Data</button>
-      <button onClick={handleDataClick}>Switch to Subsector Data</button>
-      <button onClick={handleDataClick2}>Switch to SubsectorF Data</button>
+      </div>
+      <div className='chart-infoo1'>
+      <button className='pieButton' onClick={handleDataClick3}>Sector</button>
+      <button className='pieButton' onClick={handleDataClick}>Sub-sector</button>
+      <button className='pieButton' onClick={handleDataClick2}>Sub-sector (further breakdown)</button>
       </div>
       
     <div className="chart-infoo">
-        <p>Stacked line graph of country-specific co2 emissions over time. Values in million tonnes of CO2 per year. From the graph, the user can select the countries whose data is displayed.</p>
-        <p><a className="datalink" href="https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021">Description</a></p>
-        <p><a className="datalink" href="https://data.icos-cp.eu/licence_accept?ids=%5B%22lApekzcmd4DRC34oGXQqOxbJ%22%5D">Data Source</a></p>
+        <p>Pie chart of co2 emissions by industry. By pressing the buttons, you can see the industry's more detailed emission data. </p>
+        <p><a className="datalink" href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector">Description</a></p>
+        <p><a className="datalink" href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx">Data Source</a></p>
         </div>
   </React.Fragment>
 );
