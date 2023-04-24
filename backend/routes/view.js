@@ -8,7 +8,7 @@ router.get('/:username?',
             if (err) {
                 response.json(err);
             } else {
-                response.json(dbResult[0]);
+                response.json(dbResult);
             }
         })
     });

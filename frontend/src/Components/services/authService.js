@@ -30,3 +30,7 @@ export function getCustom(path) {
     return http.get(config.custom + path);
 
 }
+
+export function getViews(user) {
+    return http.get(config.viewuser + user);
+}
