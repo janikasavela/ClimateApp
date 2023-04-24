@@ -4,10 +4,14 @@ import { getChart } from '../../services/authService';
 
 export default function Visualization5() {
   const [sector, setSector] = useState([]);
+  const [subsector, setSubsector] = useState([]);
+  const [activeData, setActiveData] = useState([]);
   
   const callingTheServer = async () => {
   
     setSector((await getChart("v5sector")).data);
+    setSubsector((await getChart("v5subsector")).data);
+    setActiveData((await getChart("v5sector")).data);
 
   };
      
@@ -15,12 +19,16 @@ export default function Visualization5() {
     callingTheServer();
 }, [])
 
+const handleDataClick = () => {
+  setActiveData(subsector);
+};
+
 const data = {
-  labels: sector.map((d) => d.sector),
+  labels: activeData.map((d) => d.sector),
   datasets: [
     {
       label: "GHG Emissions by Sector",
-      data: sector.map(d => d.share_of),
+      data: activeData.map(d => d.share_of),
       backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"],
       hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"]
     }
@@ -43,7 +51,9 @@ const options = {
     <React.Fragment>
       <div className='chart-info2'>
       <Pie data={data} options={options} />
+      <button onClick={handleDataClick}>Switch to Subsector Data</button>
       </div>
+      
     <div className="chart-infoo">
         <p>Stacked line graph of country-specific co2 emissions over time. Values in million tonnes of CO2 per year. From the graph, the user can select the countries whose data is displayed.</p>
         <p><a className="datalink" href="https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021">Description</a></p>
