@@ -24,3 +24,9 @@ export function addView(data) {
           }}
         );
 }
+
+export function getCustom(path) {
+
+    return http.get(config.custom + path);
+
+}

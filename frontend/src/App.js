@@ -8,6 +8,7 @@ import Register from './Components/Register.js';
 import Profile from './Components/Profile.js';
 import V1 from './Components/visualizationViews/V1.js';
 import V2 from './Components/visualizationViews/V2.js';
+import View from './Components/View.js';
 
 import { Routes, Route, useLocation} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -47,6 +48,7 @@ useEffect( () => {
               <Route path="/" exact element={<Homepage setPathName={setPathName} />} />
               <Route path="/v1" element={<V1 />} />
               <Route path="/v2" element={<V2 />} />
+              <Route path="/custom/:url" element={<View />} />
               <Route path="/Login" element={<UserInfoContext.Provider value={userInfo}><UserContext.Provider value={userLogged}><Login /></UserContext.Provider></UserInfoContext.Provider>} />
               <Route path="/Logout" element={<UserInfoContext.Provider value={userInfo}><UserContext.Provider value={userLogged}><Logout /></UserContext.Provider></UserInfoContext.Provider>} />
               <Route path="/Profile" element={<UserInfoContext.Provider value={userInfo}><UserContext.Provider value={userLogged}><Profile /></UserContext.Provider></UserInfoContext.Provider>} />
