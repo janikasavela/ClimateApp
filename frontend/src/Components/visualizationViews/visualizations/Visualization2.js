@@ -20,7 +20,7 @@ ChartJS.register(
     Legend
 );
 
-export default function Visualization2() {
+export default function Visualization2(props) {
 
     const [annual, setAnnual] = useState([]);
     const [monthly, setMonthly] = useState([]);
@@ -148,6 +148,9 @@ export default function Visualization2() {
         <div className='chart-info2'>
            <Line data={data} options={options}/>
         </div>
+
+        
+        { props.desc ? <p className='propsi'>{props.desc}</p> : <p></p> }
 
         <div className="chart-infoo">
         <p>Atmospheric CO2 concentrations from Mauna Loa measurements starting 1958.</p>

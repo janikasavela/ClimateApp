@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Pie } from "react-chartjs-2";
 import { getChart } from '../../services/authService';
 
-export default function Visualization5() {
+export default function Visualization5(props) {
   const [sector, setSector] = useState([]);
   const [subsector, setSubsector] = useState([]);
   const [subsectorF, setSubsectorF] = useState([]);
@@ -86,6 +86,8 @@ const options = {
       <button className='pieButton' onClick={handleDataClick}>Sub-sector</button>
       <button className='pieButton' onClick={handleDataClick2}>Sub-sector (further breakdown)</button>
       </div>
+
+      { props.desc ? <p className='propsi'>{props.desc}</p> : <p></p> }
       
     <div className="chart-infoo">
         <p>Pie chart of co2 emissions by industry. By pressing the buttons, you can see the industry's more detailed emission data. </p>

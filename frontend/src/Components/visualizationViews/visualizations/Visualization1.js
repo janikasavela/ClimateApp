@@ -20,7 +20,7 @@ ChartJS.register(
     Legend
 );
 
-export default function Visualization1() {
+export default function Visualization1(props) {
 
     const [annual, setAnnual] = useState([]);
     const [monthly, setMonthly] = useState([]);
@@ -106,6 +106,9 @@ export default function Visualization1() {
            <input type="radio" name="select" onChange={(e) => setShowAnnual(false)} id="false"/>
            <label className="show" htmlFor="false">Show Monthly</label>
         </div>
+
+
+        { props.desc ? <p className='propsi'>{props.desc}</p> : <p></p> }
 
         <div className="chart-infoo">
         <p>In the diagram above, annual temperature deviations from the period 1850-2022.</p>

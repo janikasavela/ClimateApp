@@ -68,14 +68,9 @@ export default function VisualizationForm (username) {
 
   return ( 
     <form onSubmit={handleSubmit} className='createForm'>
+      <h3>Create View</h3>
       <label htmlFor="url">Desired URL:</label>
       <input type="text" id="url" value={url} onChange={(e) => setUrl(e.target.value)} required/>
-  
-      <label htmlFor="columnLayout">Column layout:</label>
-      <select id="columnLayout" value={columnLayout} onChange={(e) => setColumnLayout(parseInt(e.target.value))}>
-        <option value={0}>Next to each other</option>
-        <option value={1}>Underneath each other</option>
-      </select>
   
       <fieldset>
         <legend>Visualizations:</legend>
@@ -95,7 +90,7 @@ export default function VisualizationForm (username) {
   
       {visualizations.length > 0 && (
         <div>
-          <h3>Descriptions:</h3>
+          <h4>Your own description for the visualization:</h4>
           {visualizations.map((v, i) => (
             <div key={v}>
               <label htmlFor={`desc${i + 1}`}>{`Description ${i + 1}:`}</label>

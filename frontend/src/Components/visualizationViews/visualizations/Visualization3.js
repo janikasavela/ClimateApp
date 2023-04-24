@@ -20,7 +20,7 @@ ChartJS.register(
     Legend
 );
 
-export default function Visualization3() {
+export default function Visualization3(props) {
 
     const [global, setGlobal] = useState([]);
     const [carbon, setCarbon] = useState([]);
@@ -141,6 +141,8 @@ const options = {
         <div className='chart-info2'>
            <Line data={data} options={options}/>
         </div>
+
+        { props.desc ? <p className='propsi'>{props.desc}</p> : <p></p> }
 
         <div className="chart-infoo">
          <p>Multi-axis line graph of temperature and carbon dioxide concentrations of changes over 2 million years.

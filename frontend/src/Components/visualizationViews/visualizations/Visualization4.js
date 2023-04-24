@@ -21,7 +21,7 @@ ChartJS.register(
     Legend
 );
 
-export default function Visualization4() {
+export default function Visualization4(props) {
 
     const [emissions, setEmissions] = useState([]);
     const [selectedCountries, setSelectedCountries] = useState(['USA', 'China', 'India']);
@@ -113,6 +113,9 @@ return (
     </div>
     <Line data={data} options={options} />
     </div>
+
+    { props.desc ? <p className='propsi'>{props.desc}</p> : <p></p> }
+
     <div className="chart-infoo">
         <p>Stacked line graph of country-specific co2 emissions over time. Values in million tonnes of CO2 per year. From the graph, the user can select the countries whose data is displayed.</p>
         <p><a className="datalink" href="https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021">Description</a></p>
