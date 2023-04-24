@@ -2,6 +2,7 @@
     "register": "http://localhost:8000/register",
     "login":"http://localhost:8000/login",
     "profile":"http://localhost:8000/profile/",
-    "chart":"http://localhost:8000/chart/"
+    "chart":"http://localhost:8000/chart/",
+    "view":"http://localhost:8000/view"
 }
 

@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { UserContext } from './context/userContext';
 import { UserInfoContext } from './context/userInfoContext.js';
 import { deleteUser } from './services/authService.js';
+import CreateView from './CreateView';
 
 
 export default function Profile() {
@@ -43,6 +44,7 @@ const deleteProfile = async (e) => {
         </React.Fragment>
         ) : (
             <React.Fragment>
+              <CreateView username={user}/>
             <p>Users profile page where will be views user have created listed, open / delete buttons for them
         and delete account button</p>
         <button onClick={() => setConfirm(true)} className="deleteButton">Delete user</button> </React.Fragment> 

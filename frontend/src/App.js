@@ -23,6 +23,7 @@ const [logged, setLogged] = useState(false);
 const [user, setUser] = useState("");
 
 useEffect( () => {
+
   if (localStorage.hasOwnProperty('token')) {
     setLogged(true);
   }

@@ -16,3 +16,11 @@ export function deleteUser(user) {
 export function getChart(path) {
     return http.get(config.chart + path);
 }
+
+export function addView(data) {
+    return http.post(config.view, data, {
+        headers: {
+            'Content-Type': 'application/json',
+          }}
+        );
+}
