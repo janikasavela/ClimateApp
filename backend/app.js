@@ -49,14 +49,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
-app.use('/profile', profileRouter);
 app.use('/chart', chartRouter);
-app.use('/view', viewRouter);
 app.use('/custom', customRouter);
 app.use(authenticateToken);
-
-
-
+app.use('/view', viewRouter);
+app.use('/profile', profileRouter);
 
 
 module.exports = app;
