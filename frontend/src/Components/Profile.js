@@ -1,10 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect} from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { UserContext } from './context/userContext';
 import { UserInfoContext } from './context/userInfoContext.js';
 import { deleteUser } from './services/authService.js';
-import CreateView from './CreateView';
 import { getViews } from './services/authService.js';
 import { deleteView } from './services/authService.js';
 import { Link } from 'react-router-dom';
@@ -24,6 +23,10 @@ const callingTheServer = async () => {
   setViewData((await getViews(user)).data);
   console.log(viewData);
 };
+
+useEffect(() => {
+  callingTheServer();
+}, [user])
 
 
 
@@ -88,11 +91,11 @@ const views = viewData.map((view, i)=>
                     </div>
                 }
                    </div>
-
-              <CreateView username={user}/>
-              </div>
+              
          
-        <button onClick={() => setConfirm(true)} className="deleteButton">Delete user</button> </React.Fragment> 
+        <button onClick={() => setConfirm(true)} className="deleteButton">Delete user</button>
+        </div>
+         </React.Fragment> 
         )}
     </div>
 

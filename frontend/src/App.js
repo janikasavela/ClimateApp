@@ -9,6 +9,7 @@ import Profile from './Components/Profile.js';
 import V1 from './Components/visualizationViews/V1.js';
 import V2 from './Components/visualizationViews/V2.js';
 import View from './Components/View.js';
+import CreateView from './Components/CreateView';
 
 import { Routes, Route, useLocation} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
@@ -53,6 +54,7 @@ useEffect( () => {
               <Route path="/Logout" element={<UserInfoContext.Provider value={userInfo}><UserContext.Provider value={userLogged}><Logout /></UserContext.Provider></UserInfoContext.Provider>} />
               <Route path="/Profile" element={<UserInfoContext.Provider value={userInfo}><UserContext.Provider value={userLogged}><Profile /></UserContext.Provider></UserInfoContext.Provider>} />
               <Route path="/Register" element={<Register setPathName={setPathName} pathName={pathName}/>}/>
+              <Route path="/Create" element={<UserInfoContext.Provider value={userInfo}><CreateView /></UserInfoContext.Provider>}/>
               <Route path="*" element={<Errorpage/>}/>
           </Routes>
        </header>

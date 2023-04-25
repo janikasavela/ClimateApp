@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { addView } from './services/authService.js';
+import { UserInfoContext } from './context/userInfoContext.js';
 
-export default function VisualizationForm (username) {
+export default function CreateView() {
   const [url, setUrl] = useState('');
   const [columnLayout, setColumnLayout] = useState(0);
   const [visualizations, setVisualizations] = useState([]);
   const [title, setTitle] = useState('');
   const [descriptions, setDescriptions] = useState({});
+  const { user } = useContext(UserInfoContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -14,7 +16,6 @@ export default function VisualizationForm (username) {
     // save new visualization to database
 
     const vToSave = visualizations.toString();
-    const user = username.username;
 
     console.log({
       url,
@@ -39,8 +40,6 @@ export default function VisualizationForm (username) {
     };
 
     await addView(body);
-
-    window.location = '/';
 
     setUrl('');
     setColumnLayout(0);

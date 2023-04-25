@@ -272,12 +272,17 @@ ul li:hover ul.dropdown {
 }
 
 .deleteButton {
-background-color: linen;
+background-color: cadetblue;
 padding: 15px;
 border-radius: 5%;
 margin: 0px;
 margin-left: 20%;
 }
+
+.deleteButton:hover {
+  background-color: rosybrown;
+}
+
 
 .show{
   font-size: small;
@@ -433,6 +438,6 @@ select {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 50px;
-  padding: 20px;
+  margin: 0;
+  padding: 0 250px;
 }
