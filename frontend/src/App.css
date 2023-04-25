@@ -408,6 +408,23 @@ select {
   transition: background-color 0.3s ease;
 }
 
+.dView {
+  display: inline-block;
+  padding: 9px 13px;
+  background-color: cadetblue;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: none;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.dView:hover {
+  background-color: rosybrown;
+}
+
 .ownViews a:hover {
   background-color: rosybrown;
 }

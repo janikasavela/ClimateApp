@@ -40,6 +40,8 @@ export default function VisualizationForm (username) {
 
     await addView(body);
 
+    window.location = '/';
+
     setUrl('');
     setColumnLayout(0);
     setVisualizations([]);

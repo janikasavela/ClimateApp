@@ -13,6 +13,10 @@ export function deleteUser(user) {
     return  http.delete(config.profile + user);
 }
 
+export function deleteView(url) {
+    return http.delete(config.viewuser + url);
+}
+
 export function getChart(path) {
     return http.get(config.chart + path);
 }

@@ -6,6 +6,7 @@ import { UserInfoContext } from './context/userInfoContext.js';
 import { deleteUser } from './services/authService.js';
 import CreateView from './CreateView';
 import { getViews } from './services/authService.js';
+import { deleteView } from './services/authService.js';
 import { Link } from 'react-router-dom';
 
 
@@ -17,15 +18,13 @@ const { setLogged } = useContext(UserContext);
 let [confirm, setConfirm] = useState(false);
 const [viewData, setViewData] = useState([]);
 
+
+
 const callingTheServer = async () => {
   setViewData((await getViews(user)).data);
   console.log(viewData);
 };
 
-
-useEffect(() => {
-  callingTheServer();
-}, [])
 
 
 const deleteProfile = async (e) => {
@@ -43,11 +42,22 @@ const deleteProfile = async (e) => {
   return toast.info("Something went wrong, please try again later!", {position: toast.POSITION.BOTTOM_CENTER});
 }
 
+const DeleteView = async (url) => {
+  const response = await deleteView(url);
+
+      if(response.status === 200){
+          setViewData(viewData.filter(view => view.url !== url))
+      }
+}
+
+
+
 const views = viewData.map((view, i)=> 
 <li className='liViews' key={view.url}>
     <div className='ownViews'>
         <h5>{view.title}</h5>
         <Link to={"/custom/" + view.url}>Open View</Link>
+        <button onClick={() => DeleteView(view.url)} type="button" className='dView'>Delete</button>
     </div>
 </li>  
 )

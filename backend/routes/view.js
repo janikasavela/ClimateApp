@@ -24,4 +24,15 @@ function(request, response) {
   });
 });
 
+router.delete('/:url', 
+function(request, response) {
+  view.deleteView(request.params.url, function(err, dbResult) {
+    if (err) {
+      response.json(err);
+    } else {
+      response.json(dbResult);
+    }
+  });
+});
+
 module.exports = router;
