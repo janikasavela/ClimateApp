@@ -44,8 +44,8 @@ const deleteProfile = async (e) => {
 }
 
 const views = viewData.map((view, i)=> 
-<li key={view.url}>
-    <div>
+<li className='liViews' key={view.url}>
+    <div className='ownViews'>
         <h5>{view.title}</h5>
         <Link to={"/custom/" + view.url}>Open View</Link>
     </div>
@@ -54,22 +54,11 @@ const views = viewData.map((view, i)=>
 
 
     return (
-        <div className="container2">
-
-           
-            <div>
-                <h3>Views:</h3>
-                {
-                    viewData.length > 0 ? views : 
-                    <div>
-                        <p>No views created.</p>
-                    </div>
-                }
-            </div>
-
+   
+         <div className=''>
 
         {confirm ? ( <React.Fragment>
-            <form onSubmit={deleteProfile}>
+            <form onSubmit={deleteProfile} className='createForm2'>
                     <h3>Confirm user deletion</h3>
                     <p>If you delete a user, you will also lose all the views you created!</p>
                     <button type="submit" className="deleteButton">Delete</button>
@@ -78,11 +67,25 @@ const views = viewData.map((view, i)=>
         </React.Fragment>
         ) : (
             <React.Fragment>
+              <div className="testi">
+
+              <div className='createForm'>
+                <h3>Views:</h3>
+                {
+                    viewData.length > 0 ? views : 
+                    <div>
+                        <p>No views created.</p>
+                    </div>
+                }
+                   </div>
+
               <CreateView username={user}/>
+              </div>
          
         <button onClick={() => setConfirm(true)} className="deleteButton">Delete user</button> </React.Fragment> 
         )}
     </div>
+
   );
 
 };
