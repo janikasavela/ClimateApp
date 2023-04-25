@@ -3,6 +3,9 @@ Web sovellus projekti kevät 2023 / Web application project spring 2023
 Climate App – ilmastonmuutokseen liittyvän tiedon visualisointityökalu 
 Tekijä: Janika Savela
 
+![image](https://user-images.githubusercontent.com/115933418/234162212-2b5a24c2-36a3-4344-b4a6-0b4900a3d179.png)
+
+
 Esittely
 Climate App on Oulun ammattikorkeakoulun 2. vuoden projektikurssilla tekemäni suurehko web-sovellus. Tehtävänä oli suunnitella ja toteuttaa ilmastonmuutokseen liittyvän tiedon visualisointityökalu käyttäen React -teknologiaa selaimessa ja JavaScript/NodeJS -teknologiaa palvelimessa. Projekti olisi kuulunut tehdä 4 hengen projektiryhmissä, mutta ryhmässäni muut opiskelijat eivät asianmukaisesti osallistuneet projektin tekemiseen, mistä syystä päädyin tekemään projektin yksin. Projektissa oli yhdelle ihmiselle todella paljon tekemistä. Onnekseni aihe oli mielestäni mielenkiintoinen ja projektia oli mukava työstää, minkä vuoksi suuri työmäärä ei haitannut. Toki hieman kiire meinasi tulla, jotta sai kaiken tehtyä valmiiksi aikataulujen puitteissa. Web-kehitys erityisesti kiinnostaa itseäni ja koen että oppimista tapahtui paljon projektin aikana, mistä olen iloinen. Projektissa luodut näkymät esittävät eri tutkimustuloksien dataa kaavioiden muodossa, teemana maailmanlaajuiset lämpötilatiedot, co2 pitoisuudet ja päästölähteet. 
 Toiminnallisuudet ja teknologiat niiden takana 
