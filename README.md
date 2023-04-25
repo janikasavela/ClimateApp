@@ -6,6 +6,9 @@
 
 Climate App on Oulun ammattikorkeakoulun 2. vuoden projektikurssilla tekemäni suurehko web-sovellus. Tehtävänä oli suunnitella ja toteuttaa ilmastonmuutokseen liittyvän tiedon visualisointityökalu käyttäen React -teknologiaa selaimessa ja JavaScript/NodeJS -teknologiaa palvelimessa. Projekti olisi kuulunut tehdä 4 hengen projektiryhmissä, mutta ryhmässäni muut opiskelijat eivät asianmukaisesti osallistuneet projektin tekemiseen, mistä syystä päädyin tekemään projektin yksin. Projektissa oli yhdelle ihmiselle todella paljon tekemistä. Onnekseni aihe oli mielestäni mielenkiintoinen ja projektia oli mukava työstää, minkä vuoksi suuri työmäärä ei haitannut. Toki hieman kiire meinasi tulla, jotta sai kaiken tehtyä valmiiksi aikataulujen puitteissa. Web-kehitys erityisesti kiinnostaa itseäni ja koen että oppimista tapahtui paljon projektin aikana, mistä olen iloinen. Projektissa luodut näkymät esittävät eri tutkimustuloksien dataa kaavioiden muodossa, teemana maailmanlaajuiset lämpötilatiedot, co2 pitoisuudet ja päästölähteet.
 
+![image](https://user-images.githubusercontent.com/115933418/234164279-8d0c78f3-4a5d-4f1b-982d-a2a94ccf0770.png)
+
+
 ## Toiminnallisuudet ja teknologiat niiden takana
 
 ### Käyttöliittymä
@@ -20,6 +23,9 @@ Visualisointi 1 on viivagraafi Hadcrut-lämpötilatiedoista tammikuusta 1850 lä
 
 Lähteet alkuperäisiin datalähteisiin on linkitetty jokaisen visualisoinnin alapuolelle. Kaaviot on luotu kaaviokirjasto Chart.js:llä. Visualisointien vaatimat tiedot on tallennettu palvelimella tietokantaan ja ladattu sieltä React-sovelluksessa palvelimen tarjoaman rajapinnan kautta http-pyynnöillä.
 
+![image](https://user-images.githubusercontent.com/115933418/234164324-73e7b273-55dc-45a3-8532-d469418f1e69.png)
+
+
 ### Endpointit
 
 Osa päätepisteistä kuten /profile on salattu token-pohjaisella todennuksella. Tunnusteen käyttöiäksi on määritetty 30 minuuttia. Tämän jälkeen kirjautumistiedot tulee syöttää uudelleen, jos haluaa päästä käsiksi suojattuihin päätepisteisiin.
@@ -27,6 +33,9 @@ Osa päätepisteistä kuten /profile on salattu token-pohjaisella todennuksella.
 ### Muu teknologia ja kehitysympäristö
 
 Kehitysympäristönä toimi Visual Studio Code (kuva 3). Frontend luotiin React-kirjastolla, ohjelmointikielinä toimi Javascript, HTML ja CSS. Tietokanta luotiin MYSQL:llä. Backend toteutettiin Node.js- ja Express.js- teknologioilla, joissa myös ohjelmointikielenä toimi Javascript. Versionhallintaan käytettiin GitHub-työympäristöä.
+
+![image](https://user-images.githubusercontent.com/115933418/234164359-4ae06bd7-2922-43f9-9546-0388e0c18a84.png)
+
 
 ### Projekti pilvipalvelussa
 
