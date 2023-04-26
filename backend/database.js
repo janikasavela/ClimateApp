@@ -6,3 +6,4 @@ const connection = mysql.createPool({
   database: 'data'
 });
 module.exports = connection;
+
