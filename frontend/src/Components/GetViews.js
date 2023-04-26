@@ -1,1 +1,0 @@
-//tähän koodi nii saadaan profiiliin linkit näkyviin 

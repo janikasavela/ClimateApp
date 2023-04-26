@@ -57,14 +57,7 @@ export default function View() {
     
     useEffect(() => {
         callingTheServer();
-
-       const moi = filteredVisualizations.map(view =>
-            visualizations[view] );
-            console.log("Moikkamoi");
-            console.log(moi[0]);
-
-
-    }, [])
+    }, [url])
 
     
 
