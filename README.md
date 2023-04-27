@@ -48,4 +48,5 @@ linkki
 
 ## Käyttöönotto
 
-Kloonaa repositorio valitsemaasi kansioon komennolla git clone https://github.com/janikasavela/ClimateApp.git. Muista ajaa npm install komento sekä frontendin että backendin juuressa, jotta saat tarvittavat riippuvaisuudet. Käynnistä ajamalla projektin juuressa komento npm start. Lataa tietokannan data MySQL Workbenchiin ja laita tietokantayhteys päälle.
+Kloonaa repositorio valitsemaasi kansioon komennolla git clone https://github.com/janikasavela/ClimateApp.git. Muista ajaa npm install komento sekä frontendin että backendin juuressa, jotta saat tarvittavat riippuvaisuudet. Käynnistä ajamalla projektin juuressa komento npm start. Lataa tietokannan data MySQL Workbenchiin ja aja komennot CREATE USER 'dataUser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'netpass'; sekä 
+GRANT ALL on data.* to 'dataUser'@'localhost'; Laita tietokantayhteys päälle.
