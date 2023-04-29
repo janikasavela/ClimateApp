@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
-import { addView } from './services/authService.js';
+import { addView, getUrl } from './services/authService.js';
 import { UserInfoContext } from './context/userInfoContext.js';
+import { toast } from 'react-toastify';
 
 export default function CreateView() {
   const [url, setUrl] = useState('');
@@ -10,8 +11,27 @@ export default function CreateView() {
   const [descriptions, setDescriptions] = useState({});
   const { user } = useContext(UserInfoContext);
 
+  const checkUrl = async () => {
+    const data = await getUrl(url); 
+    console.log("ollaan urlissa");
+    console.log(data.data.length);
+
+    if (data.data.length === 0) return true;
+
+    else return false; 
+
+};
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+   const check = await checkUrl();
+
+   console.log("tultiin urlista"); 
+
+   console.log (check);
+
+   if (check) { 
 
     // save new visualization to database
 
@@ -45,7 +65,9 @@ export default function CreateView() {
     setColumnLayout(0);
     setVisualizations([]);
     setTitle('');
-    setDescriptions({});
+    setDescriptions({}); } 
+
+    else return toast.info(("The url with this name is already in use. Try a different url name!"), {position: toast.POSITION.BOTTOM_CENTER}); 
   };
 
   const visualizationLabels = [    { value: 'v1', label: 'Temperature anomalies' },    { value: 'v2', label: 'Atmospheric CO2' },    { value: 'v3', label: 'Global temperature' },    { value: 'v4', label: 'CO2 emissions by country' },    { value: 'v5', label: 'CO2 emissions by sectors' },  ];

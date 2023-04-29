@@ -5,6 +5,7 @@
     "chart":"http://localhost:8000/chart/",
     "view":"http://localhost:8000/view",
     "custom":"http://localhost:8000/custom/",
-    "viewuser":"http://localhost:8000/view/"
+    "viewuser":"http://localhost:8000/view/",
+    "getUrl":"http://localhost:8000/check/"
 }
 

@@ -55,3 +55,12 @@ export function getViews(user) {
           }}
         );
 }
+
+export function getUrl(url) {
+    const token = "Bearer " + localStorage.getItem('token');
+    return http.get(config.getUrl + url, {
+        headers: {
+            'Authorization': token
+          }}
+        );
+}

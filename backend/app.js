@@ -36,6 +36,7 @@ var registerRouter = require('./routes/register');
 var profileRouter = require('./routes/profile');
 var chartRouter = require('./routes/chart');
 var customRouter = require('./routes/custom');
+var checkRouter = require('./routes/check');
 
 var app = express();
 app.use(cors(corsOptions));
@@ -54,6 +55,7 @@ app.use('/custom', customRouter);
 app.use(authenticateToken);
 app.use('/view', viewRouter);
 app.use('/profile', profileRouter);
+app.use('/check', checkRouter);
 
 
 module.exports = app;
