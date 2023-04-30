@@ -80,7 +80,6 @@ export default function Visualization1(props) {
       const options =
       {
         responsive: true,
-        maintainAspectRatio: false,
         plugins: {
           legend: {
             position: "bottom",
