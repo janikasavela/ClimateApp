@@ -42,7 +42,7 @@ Kehitysympäristönä toimi Visual Studio Code (kuva 3). Frontend luotiin React-
 
 ### Projekti pilvipalvelussa
 
-linkki
+https://fancy-travesseiro-20e585.netlify.app/
 
 ---
 
