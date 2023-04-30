@@ -78,7 +78,7 @@ const options = {
 
   return (
     <React.Fragment>
-      <div className='chart-info2'>
+      <div className='chart-info23'>
       <Pie data={data} options={options} />
       </div>
       <div className='chart-infoo1'>
