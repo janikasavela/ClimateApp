@@ -86,6 +86,19 @@ h2 {
       width: 100%;
   }
 
+  .chart-info {
+    height: 35vh;
+  }
+
+  .chart-info2 {
+    height: 35vh;
+  }
+
+  .chart-info22 {
+    height: 60vw;
+  }
+ 
+ 
 } 
 
 @media only screen and (max-widht: 600px) {
@@ -95,6 +108,19 @@ h2 {
   .container {
       padding: 0 16px;
   }
+
+  .chart-info {
+    height: 35vh;
+  }
+
+  .chart-info2 {
+    height: 35vh;
+  }
+
+  .chart-info22 {
+    height: 60vw;
+  }
+ 
 
 } 
 
@@ -188,10 +214,11 @@ text-transform: uppercase;
 
 .chart-info {
   padding: 30px;
-  width: 70vw;
+  width: 75vw;
   margin: auto;
   margin-top: 30px;
   margin-bottom: 0;
+  height: 70vh;
 }
 
 .chart-infoo {
@@ -295,8 +322,8 @@ margin-left: 20%;
 
 .chart-info2 {
   padding: 30px;
-  width: 70vw;
-  height: 35vw;
+  width: 75vw;
+  height: 70vh;
   margin: auto;
   margin-top: 30px;
   margin-bottom: 0;
@@ -310,8 +337,8 @@ margin-left: 20%;
 
 .chart-info22 {
   padding: 30px;
-  width: 70vw;
-  height: 35vw;
+  width: 75vw;
+  height: 40vw;
   margin: auto;
   margin-top: 30px;
   margin-bottom: 100px;
