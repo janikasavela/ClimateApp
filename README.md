@@ -44,6 +44,14 @@ Kehitysympäristönä toimi Visual Studio Code (kuva 3). Frontend luotiin React-
 
 https://fancy-travesseiro-20e585.netlify.app/
 
+(Saattaa välillä kestää pieni hetki, että data päivittyy kaavioihin, kun sivu latautuu ensimmäisen kerran).
+
+---
+
+## Projektin testaus
+
+Kurssilla oli tarkoitus tutustua myös ohjelmistotestaukseen. Tavoitteena oli kirjoittaa projektin testit ohjelmistokoodiksi, mutta sen osalta minulla loppui aika kesken. Tein kuitenkin systeemitestausta, eli testasin projektia käsityönä. Yritin ottaa mahdolliset virhetilanteet huomioon koodissa. Esimerkiksi tiettyjä syötteitä ei käyttäjä voi jättää tyhjäksi rekisteröityessään, kirjautuessaan tai luodessaan omaa näkymää, eikä näkymän url-tunniste saa olla jo käytössä toisella näkymällä. Jos näin on, tulee siitä ilmoitus käyttäjälle, jossa pyydetään vaihtamaan url-tunniste toiseen ennen kuin näkymä voidaan luoda. Myös käyttäjän luonnissa tarkistetaan, että käyttäjänimi ei ole jo käytössä, että käyttäjänimi sekä salasana ovat sopivan pituisia, eivät sisällä erikoismerkkejä tai välilyöntejä ja salasanan tulee sisältää vähintään yksi numero. Jos tietokantaan tai palvelimeen ei jostain syystä saada yhteyttä, tulee käyttäjälle virheilmoitus myös tästä. 
+
 ---
 
 ## Käyttöönotto
