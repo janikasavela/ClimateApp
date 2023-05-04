@@ -44,7 +44,7 @@ Kehitysympäristönä toimi Visual Studio Code (kuva 3). Frontend luotiin React-
 
 https://fancy-travesseiro-20e585.netlify.app/
 
-(Saattaa välillä kestää pieni hetki, että data päivittyy kaavioihin, kun sivu latautuu ensimmäisen kerran).
+(Saattaa välillä kestää pieni hetki, että data päivittyy kaavioihin, kun sivu latautuu ensimmäisen kerran. Jos näin käy, kannattaa kokeilla hetken kuluttua päivittää sivu.)
 
 ---
 
