@@ -46,7 +46,7 @@ https://fancy-travesseiro-20e585.netlify.app/
 
 (Saattaa välillä kestää, että sovellus yhdistää tietokantaan, kun sivu latautuu ensimmäisen kerran. Odota pieni hetki, jos data ei näy heti kaavioissa.)
 
-22.5.2024 EDIT: Tietokannan laittoin alkujaan ilmaispalveluna PlanetScaleen (https://planetscale.com/), mutta sen palveluehdot ovat muuttuneet ja ilmaispalvelu loppunut, jonka takia tietokanta "nukkuu", eikä ole enää aktiivisena. En viitsi siitä turhaa maksaa että se siellä pyörii, tästä syystä datat eivät enää lataudu sivustolle. Jos kiinnostaa nähdä datat kuvaajissa, ota minuun yhteyttä, niin voin herättää tietokanna vuorokaudeksi ilmaiseksi. 
+22.5.2024 EDIT: Tietokannan laittoin alkujaan ilmaispalveluna PlanetScaleen (https://planetscale.com/), mutta sen palveluehdot ovat muuttuneet ja ilmaispalvelu loppunut, jonka takia tietokanta "nukkuu", eikä ole enää aktiivisena. En viitsi siitä turhaa maksaa että se siellä pyörii, tästä syystä datat eivät enää lataudu sivustolle. Jos kiinnostaa nähdä datat kuvaajissa, ota minuun yhteyttä, niin voin herättää tietokannan vuorokaudeksi. 
 
 ---
 
