@@ -39,8 +39,6 @@ Kehitysympäristönä toimi Visual Studio Code (kuva 3). Frontend luotiin React-
 ![image](https://user-images.githubusercontent.com/115933418/234164359-4ae06bd7-2922-43f9-9546-0388e0c18a84.png)
 ##### Kuva 3: Visual Studio Code kehitysympäristö ja sieltä App.js tiedosto
 
-![image](https://github.com/janikasavela/ClimateApp/assets/115933418/b9889a51-7879-4cb7-b7df-fe2289eaa3dd)
-##### Kuva 4: Er-kaavio
 
 ### Projekti pilvipalvelussa
 
